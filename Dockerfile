@@ -3,7 +3,7 @@ FROM alpine
 # use curl to get certificate verification
 RUN apk add --no-cache curl
 
-RUN curl -sL https://dl.k8s.io/v1.8.11/kubernetes-client-linux-amd64.tar.gz \
+RUN curl -sL https://dl.k8s.io/v1.8.13/kubernetes-client-linux-amd64.tar.gz \
     | tar -xz -C /usr --strip-components=2
 
 WORKDIR /workspace
