@@ -9,7 +9,7 @@ You just found the `kubectl` you were looking for.
 Start a shell with `kubectl` in your kubernetes cluster:
 
 ```bash
-kubectl run -it guava --restart=Never --image missimg/kubectl:latest --command /bin/sh
+kubectl run -it --rm --restart=Never --image missimg/kubectl:latest --command /bin/sh my-kubectl-pod
 ```
 
 ## Local
