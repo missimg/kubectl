@@ -9,7 +9,8 @@ You just found the `kubectl` you were looking for.
 Start a shell with `kubectl` in your kubernetes cluster:
 
 ```bash
-kubectl run -it guava --restart=Never --image missimg/kubectl:latest --command /bin/sh
+K8S_VERSION=1.13
+kubectl run -it kubectl-pod --restart=Never --image missimg/kubectl:$K8S_VERSION --command /bin/sh
 ```
 
 ## Local
@@ -17,7 +18,9 @@ kubectl run -it guava --restart=Never --image missimg/kubectl:latest --command /
 Run `kubectl` commands locally:
 
 ```bash
-docker run -it --rm -u $(id -u) -v $KUBECONFIG:/workspace/.kube/config missimg/kubectl:latest \
+KUBECONFIG=$HOME/.kube/config
+K8S_VERSION=1.13
+docker run -it --rm -u $(id -u) -v $KUBECONFIG:/workspace/.kube/config missimg/kubectl:$K8S_VERSION \
     get nodes
 ```
 
